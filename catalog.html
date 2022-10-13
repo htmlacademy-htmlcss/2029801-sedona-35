@@ -47,9 +47,9 @@
       <div class="filters-background">
         <header class="inner-header">
           <h1 class="inner-header-title">Гостиницы Седоны</h1>
-          <ul class="bread-crumbs">
+          <ul class="bread-crumbs-list">
             <li class="breadcrumbs-item">
-              <a class="bread-crumbs-link visually-hidden" href="index.html">
+              <a class="bread-crumbs-link" href="index.html">
                 <img class="breadcrumbs-house-image" src="images/filters/house-breadcrumbs.svg" width="12" height="12" alt="">
                 <span class="visually-hidden">Главная</span>
               </a>
@@ -104,39 +104,49 @@
               </ul>
             </fieldset>
             <div class="price-range"></div> <!-- Здесь будет шкала выбора цены отеля -->
-            <button class="button filters-submit-button" type="submit">Применить</button>
-            <button class="button filters-reset-button" type="reset">Сбросить</button>
+            <div class="filter-buttons-container">
+              <button class="button filters-submit-button" type="submit">Применить</button>
+              <button class="button filters-reset-button" type="reset">Сбросить</button>
+            </div>
           </form>
         </section>
       </div>
       <section class="hotels-catalog">
-        <p class="search-result-title">Найдено гостиниц:&nbsp;<strong class="search-result">38</strong></p>
-        <select class="select-control" aria-label="Сортировка">
-          <option value="cheap">Сначала дешевые</option>
-          <option value="expensive">Сначала дорогие</option>
-        </select>
-        <a class="button filters-button button-current" href="#">
-          <img src="images/filters/table-view.svg" width="16" height="14" alt="">
-          <span class="visually-hidden">Показать карточки</span>
-        </a>
-        <a class="button filters-button" href="#">
-          <img src="images/filters/card-view.svg" width="16" height="14" alt="">
-          <span class="visually-hidden">Показать карточки с описанием</span>
-        </a>
-        <a class="button filters-button" href="#">
-          <img src="images/filters/list-view.svg" width="16" height="14" alt="">
-          <span class="visually-hidden">Показать список</span>
-        </a>
+        <div class="hotels-filter-container">
+          <p class="search-result-title">Найдено гостиниц:&nbsp;<strong class="search-result">38</strong></p>
+          <select class="select-control" aria-label="Сортировка">
+            <option value="cheap">Сначала дешевые</option>
+            <option value="expensive">Сначала дорогие</option>
+          </select>
+          <div class="view-type-container">
+            <a class="button filters-button button-current" href="#">
+              <img src="images/filters/table-view.svg" width="16" height="14" alt="">
+              <span class="visually-hidden">Показать карточки</span>
+            </a>
+            <a class="button filters-button" href="#">
+              <img src="images/filters/card-view.svg" width="16" height="14" alt="">
+              <span class="visually-hidden">Показать карточки с описанием</span>
+            </a>
+            <a class="button filters-button" href="#">
+              <img src="images/filters/list-view.svg" width="16" height="14" alt="">
+              <span class="visually-hidden">Показать список</span>
+            </a>
+          </div>
+        </div>
         <ul class="hotel-list">
           <li class="hotel-card">
             <a class="hotel-card-link" href="#">
               <img class="hotel-card-image" src="images/catalog/amara-hotel.jpg" width="300" height="212" alt="Горы рядом с Седоной.">
               <h3 class="hotel-card-title">Amara Resors & Spa</h3>
             </a>
-            <p class="hotel-card-type">Гостиница</p>
-            <p class="hotel-card-price">От 4000 ₽</p>
-            <a class="button about-button" href="#">Подробнее</a>
-            <button class="button favorites-button">В избранное</button>
+            <div class="type-and-price-container">
+              <p class="hotel-card-type">Гостиница</p>
+              <p class="hotel-card-price">От 4000 ₽</p>
+            </div>
+            <div class="card-buttons-container">
+              <a class="button about-button" href="#">Подробнее</a>
+              <button class="button favorites-button">В избранное</button>
+            </div>
             <div class="hotel-rating">
               <ul class="rating-star-list">
                 <li class="rating-star-item">
@@ -160,10 +170,14 @@
               <img class="hotel-card-image" src="images/catalog/villas-hotel.jpg" width="300" height="212" alt="Горы рядом с Седоной.">
               <h3 class="hotel-card-title">Villas at Poco Diablo</h3>
             </a>
-            <p class="hotel-card-type">Гостиница</p>
-            <p class="hotel-card-price">От 5000 ₽</p>
-            <a class="button about-button" href="#">Подробнее</a>
-            <button class="button already-favorites-button">В избранном</button>
+            <div class="type-and-price-container">
+              <p class="hotel-card-type">Гостиница</p>
+              <p class="hotel-card-price">От 5000 ₽</p>
+            </div>
+            <div class="card-buttons-container">
+              <a class="button about-button" href="#">Подробнее</a>
+              <button class="button already-favorites-button">В избранном</button>
+            </div>
             <div class="hotel-rating">
               <ul class="rating-star-list">
                 <li class="rating-star-item">
@@ -187,10 +201,14 @@
               <img class="hotel-card-image" src="images/catalog/desert-hotel.jpg" width="300" height="212" alt="Горы рядом с Седоной.">
               <h3 class="hotel-card-title">Desert Quail Inn</h3>
             </a>
-            <p class="hotel-card-type">Гостиница</p>
-            <p class="hotel-card-price">От 2500 ₽</p>
-            <a class="button about-button" href="#">Подробнее</a>
-            <button class="button favorites-button">В избранное</button>
+            <div class="type-and-price-container">
+              <p class="hotel-card-type">Гостиница</p>
+              <p class="hotel-card-price">От 2500 ₽</p>
+            </div>
+            <div class="card-buttons-container">
+              <a class="button about-button" href="#">Подробнее</a>
+              <button class="button favorites-button">В избранное</button>
+            </div>
             <div class="hotel-rating">
               <ul class="rating-star-list">
                 <li class="rating-star-item">
@@ -211,10 +229,14 @@
               <img class="hotel-card-image" src="images/catalog/greentree-hotel.jpg" width="300" height="212" alt="Горы рядом с Седоной.">
               <h3 class="hotel-card-title">GreenTree Inn</h3>
             </a>
-            <p class="hotel-card-type">Гостиница</p>
-            <p class="hotel-card-price">От 1500 ₽</p>
-            <a class="button about-button" href="#">Подробнее</a>
-            <button class="button favorites-button">В избранное</button>
+            <div class="type-and-price-container">
+              <p class="hotel-card-type">Гостиница</p>
+              <p class="hotel-card-price">От 1500 ₽</p>
+            </div>
+            <div class="card-buttons-container">
+              <a class="button about-button" href="#">Подробнее</a>
+              <button class="button favorites-button">В избранное</button>
+            </div>
             <div class="hotel-rating">
               <ul class="rating-star-list">
                 <li class="rating-star-item">
