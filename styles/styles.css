@@ -45,6 +45,11 @@ body {
   overflow: hidden;
 }
 
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .main-container {
   flex-grow: 1;
 }
@@ -82,11 +87,15 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.navigation-logo {
+.page-header-logo {
+  display: block;
   width: 138px;
   margin-right: 30px;
+  position: relative;
+  margin-bottom: -7px;
 }
 
 .user-navigation {
@@ -103,14 +112,16 @@ body {
   padding: 20px 16px;
 }
 
-.user-navigation .search-link {
+.user-navigation .search-link,
+.user-navigation .like-link {
+  display: block;
   padding: 22px 12px;
 }
 
-.user-navigation .like-link {
-  padding: 24px 13px 23px;
+.search-image,
+.like-image {
+  display: block;
 }
-
 
 .navigation-list .navigation-button {
   font-size: 16px;
@@ -122,6 +133,14 @@ body {
 .navigation-button {
   width: 160px;
   margin-left: 20px;
+}
+
+.hero {
+  padding: 51px 371px 82px;
+  background-image: url(../images/hero-block/hero-divider.svg), url(../images/hero-block/hero-image.jpg);
+  background-repeat: no-repeat, no-repeat;
+  background-position-y: 100%, center;
+  background-color: #DAE8F1;
 }
 
 .slogan-container {
@@ -152,9 +171,8 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
 }
 
 .advantages-text-container {
@@ -170,6 +188,8 @@ body {
 .advantages-item:nth-of-type(1),
 .advantages-item:nth-of-type(5) {
   background-color: #82B3D3;
+  grid-column: 1 / -1;
+  display: flex;
 }
 
 .advantages-item:nth-of-type(7) {
@@ -220,12 +240,6 @@ body {
   text-align: center;
 }
 
-.advantages-item:nth-of-type(1),
-.advantages-item:nth-of-type(5) {
-  display: flex;
-  align-items: center;
-}
-
 .advantages-item:nth-of-type(1) h3,
 .advantages-item:nth-of-type(5) h3 {
   color: #ffffff;
@@ -247,16 +261,19 @@ body {
 .advantages-item:nth-of-type(6) {
   background: url(../images/advantages/house.svg) no-repeat rgba(131, 179, 211, 0.12);
   background-size: 75px 72px;
+  background-position: center 80px;
 }
 
 .advantages-item:nth-of-type(7) {
   background: url(../images/advantages/burger.svg) no-repeat;
   background-size: 74px 70px;
+  background-position: center 81px;
 }
 
 .advantages-item:nth-of-type(8) {
   background: url(../images/advantages/present.svg) no-repeat rgba(131, 179, 211, 0.12);
   background-size: 64px 76px;
+  background-position: center 78px;
 }
 
 /* Newsletter section and footer */
@@ -338,7 +355,7 @@ body {
 
 .newsletter-index {
   background: url(../images/index-footer-background.jpg) no-repeat;
-  background-size: 100% 415px;
+  background-size: 100% auto;
   background-color: #82B3D3;
 }
 
@@ -512,8 +529,9 @@ body {
 
 .view-type-container {
   display: flex;
-  justify-content: space-between;
   width: 160px;
+  flex-wrap: wrap;
+  column-gap: 8px;
 }
 
 .filters-button {
@@ -527,9 +545,9 @@ body {
 }
 
 .hotel-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 340px 340px 340px;
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -538,7 +556,6 @@ body {
 
 .hotel-card {
   width: 340px;
-  height: 438px;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -553,17 +570,6 @@ body {
   margin-bottom: 16px;
 }
 
-.type-and-price-container {
-  display: flex;
-  justify-content: space-between;
-  min-height: 21px;
-}
-
-.type-and-price-container p {
-  margin: 0;
-  margin-bottom: 16px;
-}
-
 .hotel-card-link {
   font-size: 24px;
   line-height: 28px;
@@ -572,14 +578,21 @@ body {
   color: #000000;
 }
 
-.card-buttons-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 16px;
+.card-inner-container {
+  display: grid;
+  grid-template-columns: 140px 140px;
+  column-gap: 20px;
+  row-gap: 16px;
+  margin-bottom: 0;
 }
 
-.card-buttons-container .button {
-  width: 140px;
+.hotel-card-type,
+.hotel-card-price {
+  margin: 0;
+}
+
+.hotel-card-price {
+  justify-self: end;
 }
 
 .favorites-button {
@@ -590,20 +603,13 @@ body {
   background-color: #7DB54F;
 }
 
-.hotel-rating {
-  display: flex;
-  justify-content: space-between;
-}
-
 .rating-star-list {
   list-style-type: none;
   display: flex;
+  column-gap: 6px;
   justify-content: left;
   padding: 0;
-}
-
-.rating-star-item:not(:last-of-type) {
-  margin-right: 5px;
+  align-items: center;
 }
 
 .rating-count {
@@ -612,18 +618,17 @@ body {
   text-transform: uppercase;
   background-color: #F2F2F2;
   margin: 0;
+  justify-self: center;
+  padding: 9px 22px 8px 23px;
 }
 
 .pagination {
   list-style: none;
   display: flex;
   justify-content: left;
+  column-gap: 8px;
   margin: 0;
   padding: 0;
-}
-
-.pagination-item:not(:last-of-type) {
-  margin-right: 8px;
 }
 
 .pagination-item:nth-of-type(5) {
