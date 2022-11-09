@@ -237,6 +237,7 @@ img {
   box-sizing: border-box;
   padding: 92px 85px 111px;
   min-height: 384px;
+  width: 400px;
 }
 
 .advantages-item {
@@ -534,6 +535,9 @@ img {
   font-style: normal;
   text-decoration: none;
   color: inherit;
+  max-width: 660px;
+  display: block;
+  text-align: center;
 }
 
 .contacts-adress-phone:hover,
