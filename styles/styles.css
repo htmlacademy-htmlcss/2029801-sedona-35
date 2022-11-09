@@ -82,8 +82,7 @@ img {
 .navigation {
   display: flex;
   width: 1200px;
-  margin: 0 auto;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   padding: 0 70px;
   box-sizing: border-box;
 }
@@ -95,6 +94,7 @@ img {
   list-style: none;
   align-items: center;
   flex-wrap: wrap;
+  width: 600px;
 }
 
 .page-header-logo {
@@ -107,6 +107,8 @@ img {
 
 .user-navigation {
   margin-left: auto;
+  width: 280px;
+  justify-content: flex-end;
 }
 
 .navigation-link {
@@ -355,6 +357,11 @@ img {
 .advantages-item:nth-child(1) .advantages-title::before,
 .advantages-item:nth-child(5) .advantages-title::before {
   background: rgba(255, 255, 255, 0.3);
+}
+
+.township-image,
+.devil-bridge-image {
+  margin: auto;
 }
 
 /* Newsletter section and footer */
@@ -1129,7 +1136,7 @@ outline: none;
 .hotels-filter-container {
   display: flex;
   justify-content: space-between;
-  height: 49px;
+  min-height: 49px;
   align-items: center;
   margin-bottom: 40px;
 }
@@ -1172,7 +1179,7 @@ outline: none;
 
 .view-type-container {
   display: flex;
-  width: 160px;
+  min-width: 160px;
   flex-wrap: wrap;
   column-gap: 8px;
 }
